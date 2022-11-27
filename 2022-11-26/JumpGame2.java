@@ -33,7 +33,7 @@
  * 0 <= nums[i] <= 1000
  */
 
-class solution {
+class JumpGame2 {
     public static int jump(int[] nums) {
         // 结果
         int res = 0;
