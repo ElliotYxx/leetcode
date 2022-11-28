@@ -1,5 +1,3 @@
-import java.lang.Character;
-
 /**
  * https://leetcode.com/problems/rotate-image/
  * 
