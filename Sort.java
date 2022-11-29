@@ -27,17 +27,66 @@ class Sort {
                 break;
             }
             System.out.println("第" + (i + 1) + "次冒泡");
-
-            for (int k = 0; k < nums.length; k++) {
-                System.out.print(nums[k] + " ");
-            }
-            System.out.println("");
+            printArr(nums);
 
         }
     }
 
+
+    /**
+     * 插入排序 类似打牌  每次选择最小的插入到前面，后面的都顺序后移一位
+     * @param nums
+     */
+    public static void insertSort(int[] nums) {
+        for (int i = 1; i < nums.length; i++) {
+            int curr = nums[i];
+            int j = i - 1;
+            while (j >= 0 && nums[j] > curr) {
+                nums[j + 1] = nums[j];
+                j--;
+            }
+            nums[j + 1] = curr;
+            System.out.println("第" + i + "次插入排序");
+            printArr(nums);
+        }
+    }
+
+
+    /**
+     * 选择排序 每次选择第i个后最小的数字进行交换
+     * @param nums
+     */
+    public static void selectSort(int[] nums) {
+        
+        // 记录最小元素的下标
+        int minIndex;
+
+        for (int i = 0; i < nums.length - 1; i++) {
+            // 记录最小值的下标
+            minIndex = i;
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[j] < nums[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            int tmp = nums[minIndex];
+            nums[minIndex] = nums[i];
+            nums[i] = tmp;
+            System.out.println("第" + (i + 1) + "次选择排序");
+            printArr(nums);
+        }
+    }
+
+    public static void printArr(int[] nums) {
+        
+        for (int k = 0; k < nums.length; k++) {
+            System.out.print(nums[k] + " ");
+        }
+        System.out.println("");
+    }
+
     public static void main(String[] args) {
         int[] arr = new int[] { 1, 6, 5, 3, 8, 4 };
-        bubbleSort(arr);
+        selectSort(arr);
     }
 }
