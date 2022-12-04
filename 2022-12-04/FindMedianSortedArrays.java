@@ -36,5 +36,4 @@ class FindMedianSortedArrays {
         return 0.0;
     }
 
-    
 }

@@ -40,6 +40,7 @@ class AddTwoNumbers {
             this.next = next;
         }
     }
+
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(-1);
         ListNode curr = head;
@@ -58,7 +59,6 @@ class AddTwoNumbers {
             curr = curr.next;
         }
         return head.next;
-    } 
-    
+    }
 
 }
